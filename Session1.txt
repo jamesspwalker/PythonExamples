@@ -1,0 +1,127 @@
+DEMO
+num1 = int(input())
+num2 = int(input())
+
+print(num1 + num2)
+
+PROBLEM 1
+num1 = int(input())
+num2 = int(input())
+num3 = int(input())
+
+print(num1+num2+num3)
+
+PROBLEM 2
+name = input()
+print('Hello, ' + name + '!') 
+
+PROBLEM 3
+num1 = int(input())
+num2 = int(input())
+
+print(num2//num1)
+print(num2%num1)
+
+PROBLEM 4
+N = int(input())
+first_dig = (N//100)
+second_dig = (N//10)%10
+last_dig = N % 10
+print(first_dig + second_dig + last_dig)
+
+PROBLEM 5
+num1 = int(input())
+num2 = int(input())
+
+print((num1*num2)/2)
+
+PROBLEM 6
+pounds = int(input())
+pence = int(input())
+flowers = int(input())
+
+total_pounds = (pounds*flowers) + ((pence*flowers)//100)
+total_pence = (pence*flowers)%100
+
+print(total_pounds)
+print(total_pence)
+
+PROBLEM 7
+num1 = int(input())
+num2 = int(input())
+if num1 > num2:
+  print(num2)
+else:
+  print(num1)
+
+PROBLEM 8
+num1 = int(input())
+num2 = int(input())
+num3 = int(input())
+min_num = num1
+
+if min_num > num2:
+  min_num = num2
+  if min_num > num3:
+    min_num = num3
+elif min_num > num3:
+  min_num = num3
+  
+print(min_num)
+
+PROBLEM 9
+year = int(input())
+
+if year%4 == 0:
+  print('LEAP')
+else:
+  print('COMMON')
+
+PROBLEM 10
+num1_x = int(input())
+num1_y = int(input())
+num2_x = int(input())
+num2_y = int(input())
+num1_col = ''
+num2_col = ''
+
+if num1_x%2 == 1 and num1_y%2 == 1:
+  num1_col = 'BLACK'
+elif num1_x%2 == 0 and num1_y%2 == 0:
+  num1_col = 'BLACK'
+else:
+  num1_col = 'WHITE'
+
+if num2_x%2 == 1 and num2_y%2 == 1:
+  num2_col = 'BLACK'
+elif num2_x%2 == 0 and num2_y%2 == 0:
+  num2_col = 'BLACK'
+else:
+  num2_col = 'WHITE'
+  
+if num1_col == num2_col:
+  print('YES')
+else:
+  print('NO')
+
+PROBLEM 11
+num1_x = int(input())
+num1_y = int(input())
+num2_x = int(input())
+num2_y = int(input())
+
+if num1_x == num2_x or num1_y == num2_y:
+  print('YES')
+else:
+  print('NO')
+
+PROBLEM 12
+num1_x = int(input())
+num1_y = int(input())
+num2_x = int(input())
+num2_y = int(input())
+
+if num1_x-num2_x == num1_y-num2_y or (num1_x-num2_x)+(num1_y-num2_y) == 0:
+  print('YES')
+else:
+  print('NO')

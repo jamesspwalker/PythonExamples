@@ -1,0 +1,62 @@
+PROBLEM 1
+class Counter:
+  def __init__(self, my_id):
+    self._items = dict()
+    self._id = my_id
+  def add(self, item_name, amount, price_of_unit):
+    if item_name in self._items:
+      self._items.get(item_name)[0] = self._items.get(item_name)[0] + amount
+    else:
+      self._items[item_name] = [amount, price_of_unit]
+
+  def remove(self, item_name, amount):
+    if amount < self._items[item_name][0]:
+      self._items[item_name][0]  = self._items[item_name][0] - amount
+    else:
+      del self._items[item_name]
+  def reset(self):
+    self.__init__(self._id)
+  def get_total(self):
+    total = 0
+    for i in self._items:
+        total = total + (self._items.get(i)[0]*self._items.get(i)[1])
+    return round(total, 2)
+  def status(self):
+    N = 0
+    for i in self._items:
+      N = N + int(self._items.get(i)[0])
+    M = self.get_total()
+    return (str(self._id) + ' ' + str(N) + ' ' + str(M))
+
+PROBLEM 2
+class Sector:
+  def __init__(self):
+    self.fr = 0
+    self.to = 0
+    self.rad = 0
+  def rotate(self, angle):
+    self.fr = self.fr + angle
+    self.to = self.to + angle
+  def intersect(self, other):
+    n = Sector()
+    if other.fr >= self.fr:
+      n.fr = other.fr
+      n.to = self.to
+    else:
+      n.fr = self.fr
+      n.to = other.to
+    n.to = self.to
+    if self.rad <= other.rad:
+      n.rad = self.rad
+    else:
+      n.rad = other.rad
+    return(n)
+  def is_empty(self):
+    if self.fr == self.to:
+      return True
+    else:
+      return False
+  def __eq__(self, other):
+    return self.fr == other.fr and self.to == other.to and self.rad == other.rad
+  def __str__(self):
+    return str(self.fr) + ' ' + str(self.to) + ' ' + str(self.rad)

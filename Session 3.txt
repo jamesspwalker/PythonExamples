@@ -1,0 +1,201 @@
+PROBLEM 1
+text = input()
+
+splttxt = text.split()
+
+for i in range(0,len(splttxt)):
+  if i%2 == 0:
+    print(splttxt[i])
+
+PROBLEM 2
+string = input()
+
+spltstr = string.split()
+prev = int(spltstr[0])
+
+for i in range(1,len(spltstr)):
+  if int(spltstr[i]) < 0 and prev < 0:
+    print(str(prev) + ' ' + str(spltstr[i]))
+    break
+  elif int(spltstr[i]) >= 0 and prev >= 0:
+    print(str(prev) + ' ' + str(spltstr[i]))
+    break
+  prev = int(spltstr[i])
+
+PROBLEM 3
+def numb_of_distinct(L):
+  count = 0
+  prev = ''
+  for i in L:
+    if i != prev:
+      count+=1
+      prev = i
+  return count
+
+Lst = [1,1,2,3,3]
+print(numb_of_distinct(Lst))
+
+PROBLEM 4
+string = input()
+spltstr = list(map(int,string.split()))
+
+for i in range(0,len(spltstr), 2):
+  hold = spltstr.pop(i)
+  spltstr.insert(i+1, hold)
+  
+print(spltstr)
+
+PROBLEM 5
+string = input()
+spltstr = list(map(int,string.split()))
+smallindex = 0
+bigindex = 0
+small = spltstr[smallindex]
+big = spltstr[bigindex]
+
+for i in range(0, len(spltstr)):
+  if spltstr[i] > big:
+    big = spltstr[i]
+    bigindex = i
+  elif spltstr[i] < small:
+    small = spltstr[i]
+    smallindex = i
+    
+spltstr.pop(bigindex)
+spltstr.insert(bigindex, small)
+spltstr.pop(smallindex)
+spltstr.insert(smallindex, big)
+
+print(*spltstr)
+
+PROBLEM 6
+input1 = input().split()
+input2 = input().split()
+
+result = list(set(input1) - set(input2))
+result = [int(x) for x in result]
+result.sort()
+print(*result)
+
+PROBLEM 7
+def word_count(string):
+  lst = string.split()
+  return(len(lst))
+
+print(word_count("Such a day is a bad day"))
+
+PROBLEM 8
+word = input()
+first = -1
+last = 0
+
+for i in range(len(word)):
+  if word[i] == 'f' and first == -1:
+    first = i
+  elif word[i] == 'f':
+    last = i
+
+if first == -1 and last == 0:
+  print(-1)
+elif last == 0:
+  print(first)
+else:
+  print(str(first) + ' ' + str(last))
+
+PROBLEM 9
+def distinct_nums(L):
+  L.sort()
+  prev = L[0]
+  counter = 1
+  for i in L:
+    if i != prev:
+      counter+=1
+    prev = i
+  return counter
+  
+print(distinct_nums([5,3,2,3,2,4,7,8,8,9]))
+
+PROBLEM 10
+input1 = input().split()
+input2 = input().split()
+counter = 0
+input1 = list(dict.fromkeys(input1))
+input2 = list(dict.fromkeys(input2))
+
+for i in input1:
+  for j in input2:
+    if i == j:
+      counter+=1 
+      
+print(counter)
+
+PROBLEM 11
+initial = input().split()
+finished = False
+while finished is not True:
+  remove = input()
+  if remove == 'END':
+    finished = True
+    break
+  else:
+    initial = list(set(initial) - set(remove.split()))
+  add = input()
+  if add == 'END':
+    finished = True
+  else:
+    initial = initial + add.split()
+    
+if len(initial) > 1:
+  initial = [int(x) for x in initial]
+  initial.sort()
+print(*initial)
+
+PROBLEM 12
+synonym = {}
+
+length = int(input())
+count = 0
+while count < length:
+  pair = input().split()
+  synonym[pair[0]] = pair[1]
+  count+=1
+
+find = input()
+print(synonym[find])
+
+PROBLEM 13
+input1 = input().split()
+result = []
+for i in range(0,len(input1)):
+  find = input1[i]
+  counter = input1[0:i+1].count(find)
+  result.append(counter - 1)
+print(*result)
+
+PROBLEM 14
+length = int(input())
+countrycity = {}
+
+for i in range(0, length):
+  pair = input().split()
+  countrycity[pair[1]] = pair[0]
+
+searchcity = input()
+
+searchcountry = countrycity[searchcity]
+
+print(list(countrycity.values()).count(searchcountry))
+
+PROBLEM 15
+def word_count(s):
+  lst = s.split()
+  lst.sort()
+  print(lst)
+  counter = 0
+  prev = ''
+  for i in range(0, len(lst)):
+    if lst[i] != prev:
+      counter+=1
+    prev = lst[i]
+  return(counter)
+print(word_count("Such a day is a bad day"))

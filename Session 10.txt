@@ -1,0 +1,30 @@
+PROBLEM 1
+Xstrs = input().split()
+X = [int(x) for x in Xstrs]
+
+Ystrs = input().split()
+Y = [int(x) for x in Ystrs]
+
+Z = [(x,y) for x in X for y in Y if x < y] #insert a list comprehension expression
+
+for pair in Z: print(pair[0], pair[1])
+
+PROBLEM 2
+X = [int(x) for x in input().split()]
+Y = [int(x) for x in input().split()]
+
+it_squared_mapping = zip((x*x for x in X),Y) #insert a zip expression here
+for x in it_squared_mapping: print(x[0], x[1])
+
+PROBLEM 3
+def binary_map(func_of_2, col1, col2):
+  return (func_of_2(tup[0],tup[1]) for tup in zip(col1, col2))  #insert expression here
+
+PROBLEM 4
+def stringify(f):
+  def new_func(X):
+    Y = ''
+    for x in X:
+      Y = Y + (f(x))
+    return Y 
+  return new_func

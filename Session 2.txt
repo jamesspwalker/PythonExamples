@@ -1,0 +1,149 @@
+PROBLEM 1
+N = int(input())
+for i in range(1,N+1):
+  if i*i <= N:
+    print(i*i)
+  else:
+    break
+
+PROBLEM 2
+num = int(input())
+if num >= 2:
+  for i in range(2, num+1):
+    if num%i == 0:
+      print(i)
+      break
+
+PROBLEM 3
+N = int(input())
+for x in range(N):
+  if N >= 2**x:
+    expo=x
+print(expo)
+print(2**expo)
+
+PROBLEM 4
+num = int(input())
+counter = num
+
+while num != 0:
+  num = int(input())
+  if num != 0:
+    counter = counter + num
+print(counter)
+
+PROBLEM 5
+num = int(input())
+total = num
+counter = 1
+
+while num != 0:
+  num = int(input())
+  if num != 0:
+    total = total + num
+    counter=counter+1
+print(total//counter)
+
+PROBLEM 6
+finished = False
+big = 0
+
+while not finished:
+  num = int(input())
+  if num > big:
+    big = num
+  elif num == 0:
+    finished = True
+    
+print(big)
+
+PROBLEM 7
+finished = False
+counter = 0
+prev = int(input())
+
+while not finished:
+  num = int(input())
+  if num == 0:
+    finished = True
+  elif num > prev:
+    counter = counter + 1
+  prev = num
+  
+print(counter)
+
+PROBLEM 8
+num = int(input())
+fib0 = 0 
+fib1 = 1
+fib = 0
+
+for i in range(2,num):
+  fib = fib1
+  fib1 = fib1 + fib0
+  fib0 = fib
+
+print(fib1 + fib0)
+
+PROBLEM 9
+num1 = int(input())
+num2 = int(input())
+
+for i in range(num1,num2+1):
+  print(i)
+
+PROBLEM 10
+num = int(input())
+total = 1
+
+for i in range(1,num+1):
+  total = total*i
+
+print(total)
+
+PROBLEM 11
+N = int(input())
+M = int(input())
+i = 1
+while i <= N:
+  for j in range(1,M+1):
+    print(i*j, end = ' ')
+  i=i+1
+  print()
+
+PROBLEM 12
+def max_three(num1, num2, num3):
+  max = num1
+  if num2 > max and num2 > num3:
+    max = num2
+  elif num3 > max and num3 > num2:
+    max = num3
+  return max
+
+n = max_three(4,2,5)
+print(n)
+
+PROBLEM 13
+import math
+
+def add(x,y):
+  return x+y
+
+def minus(x,y):
+  return x-y
+
+def multiply(x,y):
+  return x*y
+  
+def distance(x1,y1,x2,y2):
+  return math.sqrt(add(multiply(minus(x2,x1),(minus(x2,x1))),(multiply(minus(y2,y1),(minus(y2,y1))))))
+
+d = distance(1,2,6,8)
+print(d) 
+
+PROBLEM 14
+def concat(x,y):
+  return (x + ' ' + y)
+
+s = concat("John", "Doe")
+print(s)
